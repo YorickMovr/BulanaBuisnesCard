@@ -1,8 +1,4 @@
 console.clear();
-var isStarted = false;
-let calculator = 0;
-let played = 0;
-let stoped = 0;
 
 function debounce(func, wait) {
     let timerId = null;
@@ -97,141 +93,25 @@ class RaycasterProxy {
 }
 
 window.onload = function() {
-        const elActions = [];
+    const elActions = [];
 
-
-        this.hideBtns()
-
-        document.querySelector(".fab").hidden = true
-
-
-
-        function navContactsAction() {
-            var link = document.createElement("a");
-            link.setAttribute(
-                "href",
-                'bul.vcf'
-            );
-            link.setAttribute("download", "download");
-            link.setAttribute("target", "_blank");
-            link.click();
-        }
-
-        elActions.push({
-            el: document.querySelector("#phone"),
-            action: navContactsAction
-        });
-
-        function navFB() {
-            window.open("https://www.facebook.com/tatyana.bulanaya", "_blank");
-        }
-        elActions.push({
-            el: document.querySelector("#fb"),
-            action: navFB
-        });
-
-
-        function navMail() {
-            window.open("https://bulanaya@noosphere.com");
-        }
-        elActions.push({
-            el: document.querySelector("#mail"),
-            action: navMail
-        });
-
-
-        function navSite() {
-            window.open("https://noosphereengineering.com/");
-        }
-        elActions.push({
-            el: document.querySelector("#site"),
-            action: navSite
-        });
-
-
-
-        function onVideoTap() {
-            let video = document.querySelector("#videonew")
-            if (video.paused) {
-                document.querySelector('#vid').emit('fade');
-                setTimeout(function() {
-                    document.querySelector("#main-wrapper").setAttribute('scale', { x: 0, y: 0, z: 0 });
-                    video.play()
-
-                }, 1500);
-
-            } else if (!video.paused) {
-                document.querySelector('#vid').emit('return');
-                document.querySelector("#main-wrapper").setAttribute('scale', { x: 1, y: 1, z: 1 });
-                video.pause()
-            }
-        }
-
-
-        let video = document.querySelector("#videonew")
-        elActions.push({
-            el: document.querySelector("#vid"),
-            action: onVideoTap
-        })
-
-
-
-        const raycasterProxy = new RaycasterProxy(
-            document.querySelector("#main_marker"),
-            document.querySelector("#camera"),
-            window
-        );
-        raycasterProxy.addRaycasterCheckListener(window, elActions);
+    // function navPhoneAction() {
+    //     var number = "+79169466834";
+    //     window.open(`tel:${number}`);
+    // }
+    function sayHello() {
+        alert("hello mthfucker!")
     }
-    // ////////////////////////////////////////// video
-function onVideoTap() {
-    let video
-    if (video.paused) {
-        video.play()
-    } else if (!video.paused) {
-        video.pause()
-    }
-}
+    elActions.push({
+        el: document.querySelector("#phone"),
+        action: sayHello
+    });
 
 
-AFRAME.registerComponent('registerevents', {
-    init: function() {
-        this.marker = document.querySelector("a-marker")
-        this.markerVisible = false
-    },
-    tick: function() {
-        if (!this.marker) return
-        if (this.marker.object3D.visible) {
-            if (!this.markerVisible) {
-                // marker detected
-                console.log('deteected');
-
-                let btns = document.querySelector(".fab")
-                btns.hidden = false;
-
-
-
-                this.markerVisible = true
-            }
-        } else {
-            if (this.markerVisbile) {
-                // lost sight of the marker
-
-                this.markerVisible = false
-                console.log('lost')
-            }
-        }
-    }
-});
-
-
-
-function hideBtns() {
-    let btns = document.querySelector(".fab")
-    btns.hidden = true;
-}
-
-function showBtns() {
-    let btns = document.querySelector(".fab")
-    btns.hidden = false;
+    const raycasterProxy = new RaycasterProxy(
+        document.querySelector("#main_marker"),
+        document.querySelector("#camera"),
+        window
+    );
+    raycasterProxy.addRaycasterCheckListener(window, elActions);
 }
