@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.fab {
+    /*     position: fixed;
+    width: 56px;
+    right:0; */
+    /*   bottom: 10px; */
+    /*   padding: -10px 50px 10px 10px; */
+    position: fixed;
+    width: 56px;
+    left: 90%;
+    bottom: 15px;
+    margin-left: -28px;
+}
+
+.fab:hover .fab-buttons {
+    opacity: 1;
+    visibility: visible;
+}
+
+.fab-buttons__item {
+    display: block;
+    text-align: center;
+}
+
+.ul.fab-buttons {
+    visibility: hidden;
+}
+
+.icon-material {
+    display: inline-block;
+    width: 64px;
+    height: 65px;
+}
+
+.icon-material_fb {
+    background: url("https://raw.githubusercontent.com/YorickMovr/anotheroneproj.github.io/master/assets/btns/fb64.png") center no-repeat;
+    position: fixed;
+    width: 64px;
+    left: 90%;
+    bottom: 36px;
+    margin-left: -28px;
+}
+
+.icon-material_gp {
+    background: url("https://raw.githubusercontent.com/YorickMovr/anotheroneproj.github.io/master/assets/btns/site64.png") center no-repeat;
+    position: fixed;
+    width: 64px;
+    left: 90%;
+    bottom: 100px;
+    margin-left: -28px;
+}
+
+.icon-material_tw {
+    background: url("https://raw.githubusercontent.com/YorickMovr/anotheroneproj.github.io/master/assets/btns/mail64.png") center no-repeat;
+    position: fixed;
+    width: 64px;
+    left: 90%;
+    bottom: 164px;
+    margin-left: -28px;
+}
+
+.icon-material_li {
+    background: url("https://raw.githubusercontent.com/YorickMovr/anotheroneproj.github.io/master/assets/btns/phone64.png") center no-repeat;
+    position: fixed;
+    width: 64px;
+    left: 90%;
+    bottom: 228px;
+    margin-left: -28px;
+}

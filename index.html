@@ -9,25 +9,46 @@
 
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body style="margin : 0px; overflow: hidden;">
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
     <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
     <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v6.0.0/dist/aframe-extras.min.js"></script>
-</head>
+    <script src="/scripts/mainScript.js"></script>
 
-<body>
-    <a-scene>
-        <a-assets>
-            <a-asset-item id="boomb" src="https://raw.githubusercontent.com/YorickMovr/New_proj_ar_bc/master/gltf/BoomBox/glTF/BoomBox.gltf"></a-asset-item>
-        </a-assets>
-        <a-marker preset="hiro">
-            <a-entity scale="0.1 0.1 0.1" position="0 0 0" rotation=" -90 0 0" gltf-model="#boomb" animation-mixer> </a-entity>
-        </a-marker>
-    </a-scene>
 
-    <!-- include the Glitch button to show what the webpage is about and
-          to make it easier for folks to view source and remix -->
-    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
-    <script src="https://button.glitch.me/button.js"></script>
+    <div class="fab" style="z-index: 1;">
+
+        <ul class="fab-buttons">
+            <li class="fab-buttons__item">
+                <a href="https://www.facebook.com/tatyana.bulanaya" class="fab-buttons__link" data-tooltip="Facebook">
+                    <i class="icon-material icon-material_fb"></i>
+                </a>
+            </li>
+            <li class="fab-buttons__item">
+                <a href="bulanaya@noosphere.com" class="fab-buttons__link" data-tooltip="Mail">
+                    <i class="icon-material icon-material_tw"></i>
+                </a>
+            </li>
+            <li class="fab-buttons__item">
+                <a class="fab-buttons__link" data-tooltip="Phone" id="btn_phone">
+                    <i class="icon-material icon-material_li"></i>
+                </a>
+            </li>
+            <li class="fab-buttons__item">
+                <a href="https://noosphereengineering.com/" class="fab-buttons__link" data-tooltip="Site">
+                    <i class="icon-material icon-material_gp"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
+
+
+
 </body>
 
 </html>
