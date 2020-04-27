@@ -24,7 +24,7 @@ class RaycasterProxy {
         this._marker = marker;
         this._camera = camera;
         this._window = window;
-        this._cameraMesh = this._camera.object3D.children[1];
+        this._cameraMesh = this._camera.object3D.children[0];
         this._updateMousePostion = this._updateMousePostion.bind(this);
         this._raycasterCheck = this._raycasterCheck.bind(this);
 
