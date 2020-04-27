@@ -24,7 +24,7 @@ class RaycasterProxy {
         this._marker = marker;
         this._camera = camera;
         this._window = window;
-        this._cameraMesh = this._camera.object3D.children[0];
+        this._cameraMesh = this._camera.object3D.children[1];
         this._updateMousePostion = this._updateMousePostion.bind(this);
         this._raycasterCheck = this._raycasterCheck.bind(this);
 
@@ -100,57 +100,11 @@ window.onload = function() {
         const elActions = [];
 
 
-        // this.model = document.querySelector("#animated-model");
-        // this.voice = document.querySelector("#bulVoice");
-        //   document
-        //     .querySelector("#main-wrapper")
-        //     .setAttribute("visible", "false");
-
-        //   document
-        //     .querySelector("#video-wrapper")
-        //     .setAttribute("visible", "false");
-
-        // this.model.pause()
-        // this.voice.pause()
-        // this.stopModel()
         this.hideBtns()
 
         document.querySelector(".fab").hidden = true
 
-        //   function init(){
 
-
-        //     setTimeout(function(){
-        //       animateAll()
-        //     },200)
-
-        //     document
-        //     .querySelector("#main-wrapper")
-        //     .setAttribute("visible", "true");
-
-        //   document
-        //     .querySelector("#video-wrapper")
-        //     .setAttribute("visible", "true");
-
-        //   }
-
-        //   function animateAll(){
-        //   let model = document.querySelector("#animated-model");
-        //   let voice = document.querySelector("#bulVoice");
-
-        //    model.play()
-        //   voice.play()
-
-
-        //   setTimeout(function(){
-        //     model.pause()
-        //   },11000) 
-        // }
-
-        //   elActions.push({
-        //         el: document.querySelector("#animated-model"),
-        //         action: animateAll
-        //     });
 
         function navContactsAction() {
             var link = document.createElement("a");
@@ -240,45 +194,6 @@ function onVideoTap() {
 }
 
 
-
-
-// AFRAME.registerComponent('vidhandler', {
-
-//     init: function() {
-//         // Set up initial state and variables.
-//         this.toggle = false;
-//         this.isStarted = false;
-
-
-//         this.model = document.querySelector("#animated-model")
-
-//         this.voice = document.querySelector("#bulVoice")
-//             // setNormPos()
-//         if (this.isStarted = false) {
-//             setNormPos();
-//             this.isStarted = true;
-//         }
-
-//     },
-//     tick: function() {
-
-//         if (this.el.object3D.visible == true) {
-//             if (!this.toggle) {
-//                 this.toggle = true;
-//                 // setNormPos()
-//                 this.played++;
-//                 console.log(`${this.played}played`)
-//             }
-//         } else {
-//             this.toggle = false;
-//             // stopVoiceAnimation()
-//             this.stoped++;
-//             console.log(this.stoped + 'stoped')
-//         }
-
-//     }
-
-// });
 AFRAME.registerComponent('registerevents', {
     init: function() {
         this.marker = document.querySelector("a-marker")
@@ -290,22 +205,10 @@ AFRAME.registerComponent('registerevents', {
             if (!this.markerVisible) {
                 // marker detected
                 console.log('deteected');
-                // model = document.querySelector("#animated-model");
-                // voice = document.querySelector("#bulVoice");
 
-                // model.play()
-                // voice.play()
-
-
-                // setTimeout(function() {
-                //     this.model.pause()
-                // }, 12000)
-                startAll()
-                    // showBtns()
                 let btns = document.querySelector(".fab")
                 btns.hidden = false;
-                // let loaderDiv = document.querySelector(".arjs-loader")
-                // loaderDiv.remove()
+
 
 
                 this.markerVisible = true
@@ -321,56 +224,7 @@ AFRAME.registerComponent('registerevents', {
     }
 });
 
-// function startAll() {
-//     model = document.querySelector("#animated-model");
-//     voice = document.querySelector("#bulVoice");
 
-//     model.play()
-//     voice.play()
-
-
-//     setTimeout(function() {
-//         this.model.pause()
-//     }, 12600)
-// }
-
-
-// AFRAME.registerComponent('vidhandler', {
-//     tick: function() {
-//         // var entity = document.querySelector('[sound]');
-//         if (this.el.object3D.visible == true) {
-
-//         } else {
-
-//         }
-
-
-
-//     }
-// });
-
-// function stopModel() {
-//     let model = document.querySelector("#animated-model");
-//     let voice = document.querySelector("#bulVoice");
-
-//     model.pause()
-//     voice.pause()
-// }
-
-// function animateAll() {
-//     this.model = document.querySelector("#animated-model");
-//     this.voice = document.querySelector("#bulVoice");
-
-//     this.model.play()
-//     this.voice.play()
-
-
-//     setTimeout(function() {
-//         this.model.pause()
-//     }, 12000)
-
-
-// }
 
 function hideBtns() {
     let btns = document.querySelector(".fab")
@@ -380,41 +234,4 @@ function hideBtns() {
 function showBtns() {
     let btns = document.querySelector(".fab")
     btns.hidden = false;
-}
-
-
-
-function removePos() {
-    this.main = document.querySelector("#btns-wrapper");
-    this.marker = document.querySelector("a-marker");
-    this.scene = document.querySelector("a-scene");
-    this.camera = document.querySelector("#camera");
-    //     // this.markerWrapper = document.querySelector("#marker-wrapper");
-    if (
-        this.main.parentNode !== this.scene &&
-        this.main.parentNode === this.marker
-    ) {
-        this.marker.removeChild(this.main);
-        this.main.object3D.position.set(0, -2, -10);
-        // this.main.object3D.scale.set(1, 1, 1);
-        this.main.object3D.rotation.x = THREE.Math.degToRad(0);
-        this.scene.insertBefore(this.main, this.markerWrapper);
-    }
-}
-
-function setNormPos() {
-    this.main = document.querySelector("#btns-wrapper");
-    this.marker = document.querySelector("a-marker");
-    this.scene = document.querySelector("a-scene");
-    this.camera = document.querySelector("#camera");
-    if (
-        this.main.parentNode === this.scene &&
-        this.main.parentNode !== this.marker
-    ) {
-        this.scene.removeChild(this.main);
-        this.main.object3D.position.set(-0.8, 0, 0);
-        // this.main.object3D.scale.set(0.75, 0.75, 0.75);
-        this.main.object3D.rotation.x = THREE.Math.degToRad(-90);
-        this.marker.appendChild(this.main);
-    }
 }
