@@ -1,4 +1,6 @@
 console.clear();
+var isStarted = false;
+let calculator = 0;
 
 function debounce(func, wait) {
     let timerId = null;
@@ -93,25 +95,268 @@ class RaycasterProxy {
 }
 
 window.onload = function() {
-    const elActions = [];
+        const elActions = [];
 
-    // function navPhoneAction() {
-    //     var number = "+79169466834";
-    //     window.open(`tel:${number}`);
-    // }
-    function sayHello() {
-        alert("hello mthfucker!")
+
+        this.model = document.querySelector("#animated-model");
+        this.voice = document.querySelector("#bulVoice");
+        console.log('window')
+
+        stopModel()
+            //   document
+            //     .querySelector("#main-wrapper")
+            //     .setAttribute("visible", "false");
+
+        //   document
+        //     .querySelector("#video-wrapper")
+        //     .setAttribute("visible", "false");
+
+        // this.model.pause()
+        // this.voice.pause()
+
+        //   function init(){
+
+
+        //     setTimeout(function(){
+        //       animateAll()
+        //     },200)
+
+        //     document
+        //     .querySelector("#main-wrapper")
+        //     .setAttribute("visible", "true");
+
+        //   document
+        //     .querySelector("#video-wrapper")
+        //     .setAttribute("visible", "true");
+
+        //   }
+
+        //   function animateAll(){
+        //   let model = document.querySelector("#animated-model");
+        //   let voice = document.querySelector("#bulVoice");
+
+        //    model.play()
+        //   voice.play()
+
+
+        //   setTimeout(function(){
+        //     model.pause()
+        //   },11000) 
+        // }
+
+        //   elActions.push({
+        //         el: document.querySelector("#animated-model"),
+        //         action: animateAll
+        //     });
+
+        function navContactsAction() {
+            var link = document.createElement("a");
+            link.setAttribute(
+                "href",
+                'bul.vcf'
+            );
+            link.setAttribute("download", "download");
+            link.setAttribute("target", "_blank");
+            link.click();
+        }
+
+        elActions.push({
+            el: document.querySelector("#phone"),
+            action: navContactsAction
+        });
+
+        function navFB() {
+            window.open("https://www.facebook.com/tatyana.bulanaya", "_blank");
+        }
+        elActions.push({
+            el: document.querySelector("#fb"),
+            action: navFB
+        });
+
+
+        function navMail() {
+            window.open("https://bulanaya@noosphere.com");
+        }
+        elActions.push({
+            el: document.querySelector("#mail"),
+            action: navMail
+        });
+
+
+        function navSite() {
+            window.open("https://noosphereengineering.com/");
+        }
+        elActions.push({
+            el: document.querySelector("#site"),
+            action: navSite
+        });
+
+
+
+        function onVideoTap() {
+            let video = document.querySelector("#videonew")
+            if (video.paused) {
+                document.querySelector('#vid').emit('fade');
+                setTimeout(function() {
+                    document.querySelector("#main-wrapper").setAttribute('scale', { x: 0, y: 0, z: 0 });
+                    video.play()
+
+                }, 1500);
+
+            } else if (!video.paused) {
+                document.querySelector('#vid').emit('return');
+                document.querySelector("#main-wrapper").setAttribute('scale', { x: 1, y: 1, z: 1 });
+                video.pause()
+            }
+        }
+
+
+        let video = document.querySelector("#videonew")
+        elActions.push({
+            el: document.querySelector("#vid"),
+            action: onVideoTap
+        })
+
+
+
+        const raycasterProxy = new RaycasterProxy(
+            document.querySelector("#main_marker"),
+            document.querySelector("#camera"),
+            window
+        );
+        raycasterProxy.addRaycasterCheckListener(window, elActions);
     }
-    elActions.push({
-        el: document.querySelector("#phone"),
-        action: sayHello
-    });
+    // ////////////////////////////////////////// video
+function onVideoTap() {
+    let video
+    if (video.paused) {
+        video.play()
+    } else if (!video.paused) {
+        video.pause()
+    }
+}
 
 
-    const raycasterProxy = new RaycasterProxy(
-        document.querySelector("#main_marker"),
-        document.querySelector("#camera"),
-        window
-    );
-    raycasterProxy.addRaycasterCheckListener(window, elActions);
+
+
+// AFRAME.registerComponent('vidhandler', {
+
+//   init: function () {
+//     // Set up initial state and variables.
+//     this.toggle = false;
+//     this.isStarted = false;
+
+
+//     this.model = document.querySelector("#animated-model")
+
+//     this.voice = document.querySelector("#bulVoice")
+//     // setNormPos()
+//     if(this.isStarted=false){
+//       setNormPos();
+//       this.isStarted = true;
+//     }
+
+//   },
+//   tick:function(){
+
+//   if(this.el.object3D.visible == true){
+//     if(!this.toggle){
+//        this.toggle = true;
+//       // setNormPos()
+//       if(this.isStarted = false){
+//         setNormPos()
+//         this.isStarted = true
+//       }
+//       }
+//     }else{
+//     this.toggle = false;
+//       // stopVoiceAnimation()
+
+//       if(this.isStarted = true){
+//       removePos()
+//       }
+
+//       }
+//     }
+// });
+
+
+
+
+// AFRAME.registerComponent('vidhandler', {
+//     tick: function () {
+//            // var entity = document.querySelector('[sound]');
+//          if (this.el.object3D.visible == true) {
+
+//         } else {
+
+//         }
+
+
+
+//      }
+// });
+
+
+
+
+function stopModel() {
+    let model = document.querySelector("#animated-model");
+    let voice = document.querySelector("#bulVoice");
+
+    model.pause()
+    voice.pause()
+}
+
+function animateAll() {
+    this.model = document.querySelector("#animated-model");
+    this.voice = document.querySelector("#bulVoice");
+
+    this.model.play()
+    this.voice.play()
+
+
+    setTimeout(function() {
+        this.model.pause()
+    }, 11795)
+
+
+}
+
+
+
+
+function removePos() {
+    this.main = document.querySelector("#btns-wrapper");
+    this.marker = document.querySelector("a-marker");
+    this.scene = document.querySelector("a-scene");
+    this.camera = document.querySelector("#camera");
+    //     // this.markerWrapper = document.querySelector("#marker-wrapper");
+    if (
+        this.main.parentNode !== this.scene &&
+        this.main.parentNode === this.marker
+    ) {
+        this.marker.removeChild(this.main);
+        this.main.object3D.position.set(0, -2, -10);
+        // this.main.object3D.scale.set(1, 1, 1);
+        this.main.object3D.rotation.x = THREE.Math.degToRad(0);
+        this.scene.insertBefore(this.main, this.markerWrapper);
+    }
+}
+
+function setNormPos() {
+    this.main = document.querySelector("#btns-wrapper");
+    this.marker = document.querySelector("a-marker");
+    this.scene = document.querySelector("a-scene");
+    this.camera = document.querySelector("#camera");
+    if (
+        this.main.parentNode === this.scene &&
+        this.main.parentNode !== this.marker
+    ) {
+        this.scene.removeChild(this.main);
+        this.main.object3D.position.set(-0.8, 0, 0);
+        // this.main.object3D.scale.set(0.75, 0.75, 0.75);
+        this.main.object3D.rotation.x = THREE.Math.degToRad(-90);
+        this.marker.appendChild(this.main);
+    }
 }
