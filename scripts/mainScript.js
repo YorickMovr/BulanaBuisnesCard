@@ -100,8 +100,8 @@ window.onload = function() {
         const elActions = [];
 
 
-        this.model = document.querySelector("#animated-model");
-        this.voice = document.querySelector("#bulVoice");
+        // this.model = document.querySelector("#animated-model");
+        // this.voice = document.querySelector("#bulVoice");
         //   document
         //     .querySelector("#main-wrapper")
         //     .setAttribute("visible", "false");
@@ -110,9 +110,9 @@ window.onload = function() {
         //     .querySelector("#video-wrapper")
         //     .setAttribute("visible", "false");
 
-        this.model.pause()
-        this.voice.pause()
-        this.stopModel()
+        // this.model.pause()
+        // this.voice.pause()
+        // this.stopModel()
         this.hideBtns()
 
         document.querySelector(".fab").hidden = true
@@ -321,18 +321,18 @@ AFRAME.registerComponent('registerevents', {
     }
 });
 
-function startAll() {
-    model = document.querySelector("#animated-model");
-    voice = document.querySelector("#bulVoice");
+// function startAll() {
+//     model = document.querySelector("#animated-model");
+//     voice = document.querySelector("#bulVoice");
 
-    model.play()
-    voice.play()
+//     model.play()
+//     voice.play()
 
 
-    setTimeout(function() {
-        this.model.pause()
-    }, 12600)
-}
+//     setTimeout(function() {
+//         this.model.pause()
+//     }, 12600)
+// }
 
 
 // AFRAME.registerComponent('vidhandler', {
@@ -349,28 +349,28 @@ function startAll() {
 //     }
 // });
 
-function stopModel() {
-    let model = document.querySelector("#animated-model");
-    let voice = document.querySelector("#bulVoice");
+// function stopModel() {
+//     let model = document.querySelector("#animated-model");
+//     let voice = document.querySelector("#bulVoice");
 
-    model.pause()
-    voice.pause()
-}
+//     model.pause()
+//     voice.pause()
+// }
 
-function animateAll() {
-    this.model = document.querySelector("#animated-model");
-    this.voice = document.querySelector("#bulVoice");
+// function animateAll() {
+//     this.model = document.querySelector("#animated-model");
+//     this.voice = document.querySelector("#bulVoice");
 
-    this.model.play()
-    this.voice.play()
-
-
-    setTimeout(function() {
-        this.model.pause()
-    }, 12000)
+//     this.model.play()
+//     this.voice.play()
 
 
-}
+//     setTimeout(function() {
+//         this.model.pause()
+//     }, 12000)
+
+
+// }
 
 function hideBtns() {
     let btns = document.querySelector(".fab")
