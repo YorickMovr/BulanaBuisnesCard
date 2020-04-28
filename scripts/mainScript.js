@@ -146,7 +146,7 @@ window.onload = function() {
         });
 
 
-
+        //video ofice
         function onVideoTap() {
             let video = document.querySelector("#videonew")
             if (video.paused) {
@@ -171,6 +171,31 @@ window.onload = function() {
             action: onVideoTap
         })
 
+        //video hello
+        function onVideoHelloTap() {
+            let video = document.querySelector("#prihodite")
+            if (video.paused) {
+                // document.querySelector('#vid').emit('fade');
+                setTimeout(function() {
+                    // document.querySelector("#main-wrapper").setAttribute('scale', { x: 0, y: 0, z: 0 });
+                    video.play()
+
+                }, 1500);
+
+            } else if (!video.paused) {
+                // document.querySelector('#vid').emit('return');
+                // document.querySelector("#main-wrapper").setAttribute('scale', { x: 1, y: 1, z: 1 });
+                video.pause()
+            }
+        }
+
+
+        let video = document.querySelector("#prihodite")
+        elActions.push({
+            el: document.querySelector("#vidHello"),
+            action: onVideoTap
+        })
+
 
 
         const raycasterProxy = new RaycasterProxy(
@@ -181,6 +206,7 @@ window.onload = function() {
         raycasterProxy.addRaycasterCheckListener(window, elActions);
     }
     // ////////////////////////////////////////// video
+
 function onVideoTap() {
     let video
     if (video.paused) {
@@ -189,6 +215,9 @@ function onVideoTap() {
         video.pause()
     }
 }
+
+
+
 
 
 
