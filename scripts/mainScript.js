@@ -234,3 +234,5 @@ function setNormPos() {
         this.marker.appendChild(this.main);
     }
 }
+
+console.log('the end')
