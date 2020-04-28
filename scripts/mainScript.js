@@ -98,56 +98,10 @@ window.onload = function() {
         const elActions = [];
 
 
-        this.model = document.querySelector("#animated-model");
-        this.voice = document.querySelector("#bulVoice");
+
         console.log('window')
 
-        stopModel()
-            //   document
-            //     .querySelector("#main-wrapper")
-            //     .setAttribute("visible", "false");
 
-        //   document
-        //     .querySelector("#video-wrapper")
-        //     .setAttribute("visible", "false");
-
-        // this.model.pause()
-        // this.voice.pause()
-
-        //   function init(){
-
-
-        //     setTimeout(function(){
-        //       animateAll()
-        //     },200)
-
-        //     document
-        //     .querySelector("#main-wrapper")
-        //     .setAttribute("visible", "true");
-
-        //   document
-        //     .querySelector("#video-wrapper")
-        //     .setAttribute("visible", "true");
-
-        //   }
-
-        //   function animateAll(){
-        //   let model = document.querySelector("#animated-model");
-        //   let voice = document.querySelector("#bulVoice");
-
-        //    model.play()
-        //   voice.play()
-
-
-        //   setTimeout(function(){
-        //     model.pause()
-        //   },11000) 
-        // }
-
-        //   elActions.push({
-        //         el: document.querySelector("#animated-model"),
-        //         action: animateAll
-        //     });
 
         function navContactsAction() {
             var link = document.createElement("a");
@@ -239,89 +193,9 @@ function onVideoTap() {
 
 
 
-// AFRAME.registerComponent('vidhandler', {
-
-//   init: function () {
-//     // Set up initial state and variables.
-//     this.toggle = false;
-//     this.isStarted = false;
-
-
-//     this.model = document.querySelector("#animated-model")
-
-//     this.voice = document.querySelector("#bulVoice")
-//     // setNormPos()
-//     if(this.isStarted=false){
-//       setNormPos();
-//       this.isStarted = true;
-//     }
-
-//   },
-//   tick:function(){
-
-//   if(this.el.object3D.visible == true){
-//     if(!this.toggle){
-//        this.toggle = true;
-//       // setNormPos()
-//       if(this.isStarted = false){
-//         setNormPos()
-//         this.isStarted = true
-//       }
-//       }
-//     }else{
-//     this.toggle = false;
-//       // stopVoiceAnimation()
-
-//       if(this.isStarted = true){
-//       removePos()
-//       }
-
-//       }
-//     }
-// });
 
 
 
-
-// AFRAME.registerComponent('vidhandler', {
-//     tick: function () {
-//            // var entity = document.querySelector('[sound]');
-//          if (this.el.object3D.visible == true) {
-
-//         } else {
-
-//         }
-
-
-
-//      }
-// });
-
-
-
-
-function stopModel() {
-    let model = document.querySelector("#animated-model");
-    let voice = document.querySelector("#bulVoice");
-
-    model.pause()
-    voice.pause()
-}
-
-function animateAll() {
-    this.model = document.querySelector("#animated-model");
-    this.voice = document.querySelector("#bulVoice");
-
-    this.model.play()
-    this.voice.play()
-
-
-    setTimeout(function() {
-        this.model.pause()
-    }, 11795)
-
-
-}
 
 
 
