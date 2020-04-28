@@ -39,8 +39,8 @@ body {
     background: url("https://raw.githubusercontent.com/YorickMovr/anotheroneproj.github.io/master/assets/btns/fb64.png") center no-repeat;
     position: fixed;
     width: 64px;
-    left: 90%;
-    bottom: 36px;
+    left: 20%;
+    bottom: 30px;
     margin-left: -28px;
 }
 
@@ -48,8 +48,8 @@ body {
     background: url("https://raw.githubusercontent.com/YorickMovr/anotheroneproj.github.io/master/assets/btns/site64.png") center no-repeat;
     position: fixed;
     width: 64px;
-    left: 90%;
-    bottom: 100px;
+    left: 40%;
+    bottom: 30px;
     margin-left: -28px;
 }
 
@@ -57,8 +57,8 @@ body {
     background: url("https://raw.githubusercontent.com/YorickMovr/anotheroneproj.github.io/master/assets/btns/mail64.png") center no-repeat;
     position: fixed;
     width: 64px;
-    left: 90%;
-    bottom: 164px;
+    left: 60%;
+    bottom: 30px;
     margin-left: -28px;
 }
 
@@ -66,7 +66,7 @@ body {
     background: url("https://raw.githubusercontent.com/YorickMovr/anotheroneproj.github.io/master/assets/btns/phone64.png") center no-repeat;
     position: fixed;
     width: 64px;
-    left: 90%;
-    bottom: 228px;
+    left: 80%;
+    bottom: 30px;
     margin-left: -28px;
 }
