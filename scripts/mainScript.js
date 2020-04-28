@@ -193,7 +193,16 @@ function onVideoTap() {
 
 
 
-
+function navContactsAction() {
+    var link = document.createElement("a");
+    link.setAttribute(
+        "href",
+        'bul.vcf'
+    );
+    link.setAttribute("download", "download");
+    link.setAttribute("target", "_blank");
+    link.click();
+}
 
 
 
