@@ -2,20 +2,20 @@ console.clear();
 var isStarted = false;
 let calculator = 0;
 
-function debounce(func, wait) {
-    let timerId = null;
-    return function() {
-        let context = this,
-            args = arguments;
+// function debounce(func, wait) {
+//     let timerId = null;
+//     return function() {
+//         let context = this,
+//             args = arguments;
 
-        function latter() {
-            func.apply(context, args);
-            timerId = null;
-        }
-        clearTimeout(timerId);
-        timerId = setTimeout(latter, wait);
-    };
-}
+//         function latter() {
+//             func.apply(context, args);
+//             timerId = null;
+//         }
+//         clearTimeout(timerId);
+//         timerId = setTimeout(latter, wait);
+//     };
+// }
 
 class RaycasterProxy {
     constructor(marker, camera, window) {
