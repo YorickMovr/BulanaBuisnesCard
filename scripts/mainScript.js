@@ -96,7 +96,8 @@ class RaycasterProxy {
 
 window.onload = function() {
         const elActions = [];
-
+        let model = document.querySelector("#animated-model")
+        this.model.pause()
 
 
         console.log('window')
@@ -192,8 +193,32 @@ window.onload = function() {
 
         // let video = document.querySelector("#prihodite")
         elActions.push({
-            el: document.querySelector("#vidHello"),
-            action: onVideoHelloTap
+                el: document.querySelector("#vidHello"),
+                action: onVideoHelloTap
+            })
+            //moooooooodel click
+        function onModelTap() {
+            let model = document.querySelector("#animated-model")
+            if (video.paused) {
+                // document.querySelector('#vid').emit('fade');
+                setTimeout(function() {
+                    // document.querySelector("#main-wrapper").setAttribute('scale', { x: 0, y: 0, z: 0 });
+                    model.play()
+
+                }, 100);
+
+            } else if (!model.paused) {
+                // document.querySelector('#vid').emit('return');
+                // document.querySelector("#main-wrapper").setAttribute('scale', { x: 1, y: 1, z: 1 });
+                model.pause()
+            }
+        }
+
+
+        // let video = document.querySelector("#prihodite")
+        elActions.push({
+            el: document.querySelector("#animated-model"),
+            action: onModelTap
         })
 
 
