@@ -193,7 +193,7 @@ window.onload = function() {
         // let video = document.querySelector("#prihodite")
         elActions.push({
             el: document.querySelector("#vidHello"),
-            action: onVideoTap
+            action: onVideoHelloTap
         })
 
 
