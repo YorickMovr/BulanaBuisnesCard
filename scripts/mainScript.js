@@ -155,7 +155,7 @@ window.onload = function() {
                     // document.querySelector("#main-wrapper").setAttribute('scale', { x: 0, y: 0, z: 0 });
                     video.play()
 
-                }, 500);
+                }, 100);
 
             } else if (!video.paused) {
                 // document.querySelector('#vid').emit('return');
@@ -180,7 +180,7 @@ window.onload = function() {
                     // document.querySelector("#main-wrapper").setAttribute('scale', { x: 0, y: 0, z: 0 });
                     video.play()
 
-                }, 500);
+                }, 100);
 
             } else if (!video.paused) {
                 // document.querySelector('#vid').emit('return');
