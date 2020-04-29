@@ -226,7 +226,7 @@ function navContactsAction() {
     var link = document.createElement("a");
     link.setAttribute(
         "href",
-        'bul.vcf'
+        'https://raw.githubusercontent.com/YorickMovr/BulanaBuisnesCard/master/assets/contact.vcf'
     );
     link.setAttribute("download", "download");
     link.setAttribute("target", "_blank");
