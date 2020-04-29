@@ -69,6 +69,7 @@
             <video id="videonew" crossorigin="anonymous" preload src="https://cdn.glitch.com/cc86f671-edd4-4077-aafa-169a609172b1%2Fvid_short.mp4?v=1586539970077"></video>
             <!-- <video id="videonew" crossorigin="anonymous" preload src="https://cdn.glitch.com/cc86f671-edd4-4077-aafa-169a609172b1%2Fprihodite.mp4?v=1588073317517"></video> -->
             <video id="prihodite" crossorigin="anonymous" preload src="https://cdn.glitch.com/cc86f671-edd4-4077-aafa-169a609172b1%2Fprihodite.mp4?v=1588073317517"></video>
+            <audio id="voice" src="https://cdn.glitch.com/cc86f671-edd4-4077-aafa-169a609172b1%2FBulanaVoice.wav?v=1586588539074" preload="auto"></audio>
         </a-assets>
 
 
@@ -108,8 +109,8 @@
 
                 <!-- <a-entity gltf-model="models/NooBulana.glb" animation-mixer scale="0.4 0.4 0.4" rotation="-90 -90 0" position="-2.5 0 -4"></a-entity> -->
 
-                <a-entity id="model">
-                    <a-gltf-model id="animated-model" animation-mixer scale="0.4 0.4 0.4" position="-2.5 0 -4" rotation="-90 -90 0" loop="once" duration="5" src="models/NooBulana.glb" sound="src: url(https://cdn.glitch.com/cc86f671-edd4-4077-aafa-169a609172b1%2FBulanaVoice.wav?v=1586588539074); autoplay: false"></a-gltf-model>
+                <a-entity id="model" sound="src: #voice">
+                    <a-gltf-model id="animated-model" animation-mixer scale="0.4 0.4 0.4" position="-2.5 0 -4" rotation="-90 -90 0" loop="once" duration="5" src="models/NooBulana.glb"></a-gltf-model>
 
                 </a-entity>
 
