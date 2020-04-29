@@ -106,8 +106,12 @@
                     </a-video>
                 </a-entity>
 
-                <a-entity gltf-model="models/NooBulana.glb" animation-mixer scale="0.4 0.4 0.4" rotation="-90 -90 0" position="-2.5 0 -4"></a-entity>
+                <!-- <a-entity gltf-model="models/NooBulana.glb" animation-mixer scale="0.4 0.4 0.4" rotation="-90 -90 0" position="-2.5 0 -4"></a-entity> -->
 
+                <a-entity id="model">
+                    <a-gltf-model id="animated-model" animation-mixer scale="0.4 0.4 0.4" position="-2.5 0 -4" rotation="-90 -90 0" loop="once" duration="5" src="models/NooBulana.glb"></a-gltf-model>
+
+                </a-entity>
 
 
 
